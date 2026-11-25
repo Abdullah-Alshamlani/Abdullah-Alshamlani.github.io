@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdullah Al-Shamlani | .NET Software Developer</title>
+<meta name="description" content="Abdullah Al-Shamlani — Backend / .NET Software Developer based in Riyadh, Saudi Arabia. ASP.NET Core, Web API, Blazor, Clean Architecture.">
+<meta property="og:title" content="Abdullah Al-Shamlani | .NET Software Developer">
+<meta property="og:description" content="Backend / .NET Software Developer — ASP.NET Core, Web API, Blazor, Clean Architecture.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0a0e14">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230a0e14'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-size='30' font-weight='700' fill='%2322d3ee'>&lt;A/&gt;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e14; --bg2:#0f141c; --card:#121924; --line:#1f2a3a;
+    --text:#e6edf3; --muted:#8b98a9; --accent:#22d3ee; --accent2:#a78bfa; --green:#4ade80;
+    --radius:14px;
+    --font:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  html[lang="ar"]{ --font:'IBM Plex Sans Arabic','Inter',system-ui,sans-serif; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.7;overflow-x:hidden;
+    background-image:linear-gradient(rgba(34,211,238,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.035) 1px,transparent 1px);
+    background-size:44px 44px;}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono)}
+  ::selection{background:var(--accent);color:var(--bg)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(10,14,20,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .logo{font-family:var(--mono);font-weight:700;color:var(--accent);font-size:1.05rem;direction:ltr}
+  .logo span{color:var(--muted)}
+  .links{display:flex;gap:26px;align-items:center}
+  .links a{color:var(--muted);font-size:.92rem;transition:color .2s}
+  .links a:hover{color:var(--text)}
+  .lang{font-family:var(--mono);border:1px solid var(--line);background:var(--card);color:var(--text);padding:7px 14px;border-radius:999px;cursor:pointer;font-size:.85rem;display:flex;gap:8px;align-items:center;transition:border-color .2s}
+  .lang:hover{border-color:var(--accent)}
+  .lang b{color:var(--accent)}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;width:40px;height:40px;cursor:pointer;font-size:1.1rem}
+
+  /* hero */
+  .hero{padding:110px 0 90px;position:relative}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 15% 20%,rgba(34,211,238,.12),transparent 70%),radial-gradient(500px 300px at 85% 60%,rgba(167,139,250,.10),transparent 70%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.8rem;color:var(--green);border:1px solid rgba(74,222,128,.3);background:rgba(74,222,128,.06);padding:6px 12px;border-radius:999px;margin-bottom:22px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
+  @keyframes pulse{50%{opacity:.35}}
+  h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.15;font-weight:800;letter-spacing:-.02em}
+  html[lang="ar"] h1{letter-spacing:0;line-height:1.35}
+  h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .role{font-family:var(--mono);color:var(--accent);margin:14px 0 18px;font-size:1.05rem}
+  .lead{color:var(--muted);font-size:1.07rem;max-width:560px}
+  .cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:10px;font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s,border-color .2s}
+  .btn-primary{background:var(--accent);color:var(--bg)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(34,211,238,.25)}
+  .btn-ghost{border:1px solid var(--line);background:var(--card)}
+  .btn-ghost:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .btn svg{width:18px;height:18px}
+
+  /* terminal */
+  .term{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45);direction:ltr;text-align:left}
+  .term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:#0c1118}
+  .term-bar i{width:11px;height:11px;border-radius:50%;display:block}
+  .term-bar i:nth-child(1){background:#ff5f57}.term-bar i:nth-child(2){background:#febc2e}.term-bar i:nth-child(3){background:#28c840}
+  .term-bar span{margin-left:auto;font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+  .term-body{padding:20px 22px;font-family:var(--mono);font-size:.86rem;line-height:1.9;min-height:270px}
+  .t-prompt{color:var(--green)} .t-cmd{color:var(--text)} .t-out{color:var(--muted)} .t-key{color:var(--accent2)} .t-str{color:#fbbf24} .t-acc{color:var(--accent)}
+  .cursor{display:inline-block;width:8px;height:1.05em;background:var(--accent);vertical-align:text-bottom;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+
+  /* sections */
+  section{padding:90px 0}
+  .sec-head{margin-bottom:44px}
+  .sec-tag{font-family:var(--mono);color:var(--accent);font-size:.85rem;margin-bottom:8px;direction:ltr;display:inline-block}
+  h2{font-size:clamp(1.7rem,3vw,2.3rem);font-weight:700}
+  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:36px}
+  .about-text p{color:var(--muted);font-size:1.04rem;margin-bottom:16px}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .stat b{display:block;direction:ltr;unicode-bidi:isolate;font-family:var(--mono);font-size:1.9rem;color:var(--accent);line-height:1.2}
+  .stat span{color:var(--muted);font-size:.9rem}
+
+  .skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:border-color .25s,transform .25s}
+  .card:hover{border-color:rgba(34,211,238,.45);transform:translateY(-3px)}
+  .card h3{font-size:1rem;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .card h3 .ic{font-family:var(--mono);color:var(--accent);font-size:.85rem;direction:ltr}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;direction:ltr;justify-content:flex-start}
+  html[dir="rtl"] .chips{justify-content:flex-end}
+  .chip{font-family:var(--mono);font-size:.78rem;padding:5px 11px;border-radius:7px;background:rgba(34,211,238,.07);border:1px solid rgba(34,211,238,.18);color:#bfefff}
+
+  .timeline{position:relative;padding-inline-start:30px}
+  .timeline::before{content:"";position:absolute;inset-inline-start:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--accent2),transparent)}
+  .job{position:relative;margin-bottom:26px}
+  .job::before{content:"";position:absolute;inset-inline-start:-29px;top:26px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+  .job-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+  .job h3{font-size:1.1rem;font-weight:600}
+  .job .co{color:var(--accent);font-size:.95rem}
+  .job .date{font-family:var(--mono);font-size:.8rem;color:var(--muted);white-space:nowrap;direction:ltr}
+  .job ul{list-style:none;margin-top:12px}
+  .job li{color:var(--muted);font-size:.95rem;padding-inline-start:20px;position:relative;margin-bottom:6px}
+  .job li::before{content:"▹";position:absolute;inset-inline-start:0;color:var(--accent)}
+  html[dir="rtl"] .job li::before{content:"◃"}
+
+  .projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px}
+  .proj{display:flex;flex-direction:column}
+  .proj-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+  .folder{font-size:1.6rem;color:var(--accent)}
+  .proj-top a{color:var(--muted);transition:color .2s}
+  .proj-top a:hover{color:var(--accent)}
+  .proj-top svg{width:20px;height:20px}
+  .proj h3{font-size:1.15rem;margin-bottom:4px}
+  .proj .url{font-family:var(--mono);font-size:.8rem;color:var(--accent);margin-bottom:12px;direction:ltr;display:inline-block}
+  .proj p{color:var(--muted);font-size:.94rem;flex:1}
+  .proj .chips{margin-top:18px}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .edu-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px}
+  .edu-item:last-child{margin-bottom:0}
+  .edu-ic{flex:none;width:42px;height:42px;border-radius:10px;display:grid;place-items:center;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.25);color:var(--accent2);font-family:var(--mono);font-size:.85rem}
+  .edu-item h4{font-size:1rem;font-weight:600}
+  .edu-item p{color:var(--muted);font-size:.9rem}
+
+  .contact{text-align:center}
+  .contact .lead{margin:14px auto 34px}
+  .contact-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted);font-size:.85rem}
+  footer .mono{color:var(--accent)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:860px){
+    .hero{padding:70px 0 60px}
+    .hero-grid,.about-grid,.two{grid-template-columns:1fr}
+    .links{display:none;position:absolute;top:64px;inset-inline:0;flex-direction:column;background:var(--bg2);border-bottom:1px solid var(--line);padding:18px;gap:16px}
+    .links.open{display:flex}
+    .menu-btn{display:block}
+    section{padding:64px 0}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">&lt;Abdullah<span>.Dev</span> /&gt;</a>
+    <div class="links" id="links">
+      <a href="#about" data-i18n="nav.about"></a>
+      <a href="#skills" data-i18n="nav.skills"></a>
+      <a href="#experience" data-i18n="nav.experience"></a>
+      <a href="#projects" data-i18n="nav.projects"></a>
+      <a href="#contact" data-i18n="nav.contact"></a>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="lang" id="langBtn" aria-label="Switch language"><span id="langLabel"></span></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge"><span class="dot"></span><span data-i18n="hero.badge"></span></div>
+      <h1><span data-i18n="hero.hi"></span><br><span class="grad" data-i18n="hero.name"></span></h1>
+      <div class="role mono" data-i18n="hero.role"></div>
+      <p class="lead" data-i18n="hero.lead"></p>
+      <div class="cta">
+        <a href="#projects" class="btn btn-primary"><span data-i18n="hero.cta1"></span></a>
+        <a href="https://github.com/Abdullah-Alshamlani" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.590.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+    <div class="term" aria-hidden="true">
+      <div class="term-bar"><i></i><i></i><i></i><span>~/abdullah — bash</span></div>
+      <div class="term-body" id="term"></div>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="reveal">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-tag">// 01. about</div><h2 data-i18n="about.title"></h2></div>
+    <div class="about-grid">
+      <div class="about-text"><p data-i18n="about.p1"></p><p data-i18n="about.p2"></p></div>
+      <div class="stats">
+        <div class="stat"><b>2+</b><span data-i18n="about.s1"></span></div>
+        <div class="stat"><b>4</b><span data-i18n="about.s2"></span></div>
+        <div class="stat"><b>SDLC</b><span data-i18n="about.s3"></span></div>
+        <div class="stat"><b>.NET</b><span data-i18n="about.s4"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-tag">// 02. skills</div><h2 data-i18n="skills.title"></h2></div>
+    <div class="skills" id="skillsGrid"></div>
+  </div>
+</section>
+
+<section id="experience" class="reveal">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-tag">// 03. experience</div><h2 data-i18n="exp.title"></h2></div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<section id="projects" class="reveal">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-tag">// 04. projects</div><h2 data-i18n="proj.title"></h2></div>
+    <div class="projects" id="projGrid"></div>
+  </div>
+</section>
+
+<section id="education" class="reveal">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-tag">// 05. education</div><h2 data-i18n="edu.title"></h2></div>
+    <div class="two">
+      <div class="card">
+        <h3><span class="ic">{ }</span><span data-i18n="edu.degree"></span></h3>
+        <div class="edu-item"><div class="edu-ic">B.Sc</div><div><h4 data-i18n="edu.d1"></h4><p data-i18n="edu.d1s"></p></div></div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">[✓]</span><span data-i18n="edu.certs"></span></h3>
+        <div class="edu-item"><div class="edu-ic">.NET</div><div><h4 data-i18n="edu.c1"></h4><p data-i18n="edu.c1s"></p></div></div>
+        <div class="edu-item"><div class="edu-ic">Py</div><div><h4 data-i18n="edu.c2"></h4><p data-i18n="edu.c2s"></p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="reveal contact">
+  <div class="wrap">
+    <div class="sec-tag">// 06. contact</div>
+    <h2 data-i18n="contact.title"></h2>
+    <p class="lead" data-i18n="contact.lead"></p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:abdullah.mufarreh.23@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+        <span data-i18n="contact.email"></span>
+      </a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/abdullahalshamlani-7388b1259" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/Abdullah-Alshamlani" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span data-i18n="footer"></span> <span class="mono">© <span id="year"></span></span></div>
+</footer>
+
+<script>
+const I18N = {
+  en: {
+    "nav.about":"About","nav.skills":"Skills","nav.experience":"Experience","nav.projects":"Projects","nav.contact":"Contact",
+    "hero.badge":"Open to new opportunities","hero.hi":"Hi, I'm","hero.name":"Abdullah Al-Shamlani",
+    "hero.role":"> Backend / .NET Software Developer",
+    "hero.lead":"I build RESTful APIs and enterprise web applications with C#, ASP.NET Core and Blazor — clean, scalable, and production-ready.",
+    "hero.cta1":"View my work",
+    "about.title":"About me",
+    "about.p1":"Software Developer with over 2 years of professional experience developing and maintaining RESTful APIs and enterprise web applications using C#, ASP.NET Core and Python/Django.",
+    "about.p2":"I deliver production-ready solutions across the full Software Development Life Cycle — analysis, design, development, testing, CI/CD deployment and monitoring — with a focus on Clean Architecture, solid API design and engineering best practices.",
+    "about.s1":"Years of experience","about.s2":"Enterprise apps delivered","about.s3":"End-to-end delivery","about.s4":"Core stack",
+    "skills.title":"Tech stack",
+    "exp.title":"Experience",
+    "proj.title":"Featured projects",
+    "edu.title":"Education & certifications","edu.degree":"Education","edu.certs":"Certifications",
+    "edu.d1":"Bachelor's in Software Engineering","edu.d1s":"University of Hail · 2018 – 2023",
+    "edu.c1":"ASP.NET Core Advanced","edu.c1s":"Tuwaiq Academy · 2026",
+    "edu.c2":"Python & Django Web Development","edu.c2s":"Tuwaiq Academy · 2024",
+    "contact.title":"Let's work together","contact.lead":"Have a project, a role, or just want to talk .NET? My inbox is always open.",
+    "contact.email":"Send an email",
+    "footer":"Designed & built by Abdullah Al-Shamlani"
+  },
+  ar: {
+    "nav.about":"نبذة","nav.skills":"المهارات","nav.experience":"الخبرات","nav.projects":"المشاريع","nav.contact":"تواصل",
+    "hero.badge":"متاح لفرص عمل جديدة","hero.hi":"مرحباً، أنا","hero.name":"عبدالله الشملاني",
+    "hero.role":"مطوّر برمجيات Backend / .NET",
+    "hero.lead":"أبني واجهات RESTful APIs وتطبيقات ويب مؤسسية باستخدام C# وASP.NET Core وBlazor — بكود نظيف وقابل للتوسّع وجاهز للإنتاج.",
+    "hero.cta1":"شاهد أعمالي",
+    "about.title":"نبذة عني",
+    "about.p1":"مطوّر برمجيات بخبرة عملية تتجاوز سنتين في تطوير وصيانة واجهات RESTful APIs وتطبيقات الويب المؤسسية باستخدام C# وASP.NET Core وPython/Django.",
+    "about.p2":"أقدّم حلولاً جاهزة للإنتاج عبر دورة حياة تطوير البرمجيات كاملة — من التحليل والتصميم والتطوير والاختبار، إلى النشر عبر CI/CD والمراقبة المستمرة — مع تركيز على Clean Architecture وتصميم APIs متين وأفضل ممارسات هندسة البرمجيات.",
+    "about.s1":"سنوات خبرة","about.s2":"تطبيقات مؤسسية منجزة","about.s3":"تسليم متكامل","about.s4":"التقنية الأساسية",
+    "skills.title":"التقنيات والمهارات",
+    "exp.title":"الخبرات العملية",
+    "proj.title":"أبرز المشاريع",
+    "edu.title":"التعليم والشهادات","edu.degree":"التعليم","edu.certs":"الشهادات",
+    "edu.d1":"بكالوريوس هندسة البرمجيات","edu.d1s":"جامعة حائل · 2018 – 2023",
+    "edu.c1":"ASP.NET Core المتقدم","edu.c1s":"أكاديمية طويق · 2026",
+    "edu.c2":"تطوير الويب بـ Python وDjango","edu.c2s":"أكاديمية طويق · 2024",
+    "contact.title":"لنعمل معاً","contact.lead":"عندك مشروع أو فرصة وظيفية، أو تبي تتكلم عن .NET؟ بريدي مفتوح دائماً.",
+    "contact.email":"أرسل بريداً",
+    "footer":"صُمّم وطُوّر بواسطة عبدالله الشملاني"
+  }
+};
+
+const SKILLS = [
+  {ic:"</>", en:"Languages", ar:"لغات البرمجة", items:["C#","Python","JavaScript","SQL"]},
+  {ic:"{api}", en:"Backend", ar:"الواجهات الخلفية", items:["ASP.NET Core","Web API","REST APIs","Entity Framework Core","LINQ","Razor Pages","Django"]},
+  {ic:"<ui>", en:"Frontend", ar:"الواجهات الأمامية", items:["Blazor","HTML5","CSS3","Bootstrap"]},
+  {ic:"[db]", en:"Databases", ar:"قواعد البيانات", items:["SQL Server","PostgreSQL"]},
+  {ic:"#arch", en:"Architecture & Patterns", ar:"المعمارية والأنماط", items:["Clean Architecture","Repository Pattern","Dependency Injection","MVC"]},
+  {ic:"$ops", en:"DevOps & Cloud", ar:"DevOps والسحابة", items:["CI/CD","Ubuntu","Nginx","Gunicorn","DigitalOcean","SSL/TLS"]},
+  {ic:"git", en:"Practices & Tools", ar:"الممارسات والأدوات", items:["Git","GitHub","Agile/Scrum","Code Reviews","Unit Testing","Monitoring","SDLC"]}
+];
+
+const JOBS = [
+  {date:"Oct 2025 – Present", dateAr:"أكتوبر 2025 – الآن",
+   en:{t:"Software Developer", c:"Watania Solutions Co. · Riyadh", b:[
+     "Engineer backend systems and enterprise web applications in C# and ASP.NET Core, translating business requirements into maintainable, production-ready software.",
+     "Design and implement RESTful APIs and backend services powering integrated business applications, collaborating with infrastructure and database teams on code reviews and testing.",
+     "Investigate and resolve performance issues through monitoring and root-cause analysis, reducing recurring incidents.",
+     "Support CI/CD deployments and handle support requests within SLA targets."]},
+   ar:{t:"مطوّر برمجيات", c:"شركة الوطنية للحلول · الرياض", b:[
+     "تطوير الأنظمة الخلفية وتطبيقات الويب المؤسسية بـ C# وASP.NET Core، وتحويل متطلبات العمل إلى برمجيات قابلة للصيانة وجاهزة للإنتاج.",
+     "تصميم وتنفيذ واجهات RESTful APIs وخدمات خلفية تشغّل تطبيقات أعمال متكاملة، بالتعاون مع فرق البنية التحتية وقواعد البيانات في مراجعة الكود والاختبار.",
+     "تحليل مشاكل الأداء وحلّها عبر المراقبة وتحليل الأسباب الجذرية، مما قلّل تكرار الأعطال.",
+     "دعم عمليات النشر عبر CI/CD ومعالجة طلبات الدعم ضمن مستويات الخدمة المتفق عليها (SLA)."]}},
+  {date:"Jul 2024 – Oct 2025", dateAr:"يوليو 2024 – أكتوبر 2025",
+   en:{t:"Backend Developer (Part-time, Remote)", c:"Future Motion Innovations (FMI)", b:[
+     "Built and maintained scalable web applications and RESTful backend services using Python and Django.",
+     "Managed cloud deployments and tuned production environments for better stability and performance.",
+     "Shipped features end-to-end with cross-functional teams alongside a concurrent role."]},
+   ar:{t:"مطوّر Backend (دوام جزئي، عن بُعد)", c:"Future Motion Innovations (FMI)", b:[
+     "بناء وصيانة تطبيقات ويب قابلة للتوسّع وخدمات RESTful خلفية باستخدام Python وDjango.",
+     "إدارة النشر السحابي وضبط بيئات الإنتاج لتحسين الاستقرار والأداء.",
+     "تسليم الميزات بشكل متكامل مع فرق متعددة التخصصات بالتوازي مع دور وظيفي آخر."]}},
+  {date:"Jul 2024 – Jan 2025", dateAr:"يوليو 2024 – يناير 2025",
+   en:{t:"Software Engineer", c:"Hail Region Municipality", b:[
+     "Developed municipal digital service applications to improve operational efficiency and citizen experience.",
+     "Partnered with QA on structured testing and continuous monitoring to safeguard release quality.",
+     "Supported deployment, maintenance and troubleshooting of live public-sector services."]},
+   ar:{t:"مهندس برمجيات", c:"أمانة منطقة حائل", b:[
+     "تطوير تطبيقات خدمات رقمية بلدية لرفع الكفاءة التشغيلية وتحسين تجربة المستفيدين.",
+     "التعاون مع فرق ضمان الجودة في الاختبار المنهجي والمراقبة المستمرة لضمان جودة الإصدارات.",
+     "دعم نشر وصيانة واستكشاف أعطال الخدمات الرقمية الحيّة في القطاع الحكومي."]}},
+  {date:"Mar 2023 – Aug 2023", dateAr:"مارس 2023 – أغسطس 2023",
+   en:{t:"IT Support Specialist (Co-op)", c:"MC2", b:[
+     "Monitored data center operations to maintain continuous system availability.",
+     "Diagnosed hardware/software issues and maintained backup procedures with IT teams."]},
+   ar:{t:"أخصائي دعم تقني (تدريب تعاوني)", c:"MC2", b:[
+     "مراقبة عمليات مركز البيانات للحفاظ على استمرارية توفّر الأنظمة.",
+     "تشخيص أعطال الأجهزة والبرمجيات والحفاظ على إجراءات النسخ الاحتياطي مع فرق تقنية المعلومات."]}}
+];
+
+const PROJECTS = [
+  {url:"https://fhc.com.sa", host:"fhc.com.sa", tags:["ASP.NET Core","Web API","SQL Server"],
+   en:{t:"Point Platform", d:"Delivered 4 enterprise web applications, designing the backend architecture and integrating cross-system workflows to support business operations at scale."},
+   ar:{t:"منصة Point", d:"تسليم 4 تطبيقات ويب مؤسسية، مع تصميم المعمارية الخلفية وربط سير العمل بين الأنظمة لدعم عمليات الأعمال على نطاق واسع."}},
+  {url:"https://fmi.sa", host:"fmi.sa", tags:["Python","Django","PostgreSQL","Nginx"],
+   en:{t:"FMI Platform", d:"Designed and built a scalable corporate website in Django with a maintainable, well-structured architecture for long-term extensibility."},
+   ar:{t:"منصة FMI", d:"تصميم وبناء موقع مؤسسي قابل للتوسّع بـ Django، بمعمارية منظّمة وسهلة الصيانة تدعم التطوير على المدى الطويل."}},
+  {url:"https://cheffriendtrading.com", host:"cheffriendtrading.com", tags:["HTML5","CSS3","JavaScript","Responsive"],
+   en:{t:"Chef Friend Portfolio", d:"Built a responsive portfolio website with a modern frontend, optimized for consistent performance across devices."},
+   ar:{t:"موقع Chef Friend", d:"بناء موقع تعريفي متجاوب بواجهة أمامية حديثة، ومحسّن لأداء ثابت على جميع الأجهزة."}}
+];
+
+const EXT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>';
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function render(lang){
+  const T = I18N[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  document.title = lang === "ar" ? "عبدالله الشملاني | مطوّر برمجيات .NET" : "Abdullah Al-Shamlani | .NET Software Developer";
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = T[el.dataset.i18n] ?? ""; });
+  document.getElementById("langLabel").innerHTML = lang === "ar" ? "<b>EN</b> English" : "<b>ع</b> العربية";
+
+  document.getElementById("skillsGrid").innerHTML = SKILLS.map(s =>
+    `<div class="card"><h3><span class="ic">${esc(s.ic)}</span>${s[lang]}</h3><div class="chips">${s.items.map(i=>`<span class="chip">${i}</span>`).join("")}</div></div>`).join("");
+
+  document.getElementById("timeline").innerHTML = JOBS.map(j => { const d=j[lang]; return `
+    <div class="job card"><div class="job-head"><div><h3>${d.t}</h3><div class="co">${d.c}</div></div><div class="date">${lang==="ar"?j.dateAr:j.date}</div></div>
+    <ul>${d.b.map(b=>`<li>${b}</li>`).join("")}</ul></div>`; }).join("");
+
+  document.getElementById("projGrid").innerHTML = PROJECTS.map(p => { const d=p[lang]; return `
+    <div class="card proj"><div class="proj-top"><span class="folder mono">&lt;/&gt;</span><a href="${p.url}" target="_blank" rel="noopener" aria-label="${d.t}">${EXT}</a></div>
+    <h3>${d.t}</h3><a class="url" href="${p.url}" target="_blank" rel="noopener">${p.host}</a><p>${d.d}</p>
+    <div class="chips">${p.tags.map(t=>`<span class="chip">${t}</span>`).join("")}</div></div>`; }).join("");
+}
+
+function getLang(){
+  try { const s = localStorage.getItem("lang"); if (s === "ar" || s === "en") return s; } catch(e){}
+  return (navigator.language || "").toLowerCase().startsWith("ar") ? "ar" : "en";
+}
+let lang = getLang();
+render(lang);
+document.getElementById("langBtn").addEventListener("click", () => {
+  lang = lang === "ar" ? "en" : "ar";
+  try { localStorage.setItem("lang", lang); } catch(e){}
+  render(lang);
+});
+document.getElementById("menuBtn").addEventListener("click", () => document.getElementById("links").classList.toggle("open"));
+document.querySelectorAll("#links a").forEach(a => a.addEventListener("click", () => document.getElementById("links").classList.remove("open")));
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* terminal typing */
+const lines = [
+  ['<span class="t-prompt">abdullah@dev</span>:<span class="t-acc">~</span>$ ', '<span class="t-cmd">whoami</span>'],
+  ['', '<span class="t-out">Backend / .NET Software Developer</span>'],
+  ['<span class="t-prompt">abdullah@dev</span>:<span class="t-acc">~</span>$ ', '<span class="t-cmd">cat stack.json</span>'],
+  ['', '{ <span class="t-key">"backend"</span>: <span class="t-str">"ASP.NET Core"</span>,'],
+  ['', '  <span class="t-key">"frontend"</span>: <span class="t-str">"Blazor"</span>,'],
+  ['', '  <span class="t-key">"db"</span>: <span class="t-str">"SQL Server"</span>,'],
+  ['', '  <span class="t-key">"arch"</span>: <span class="t-str">"Clean Architecture"</span> }'],
+  ['<span class="t-prompt">abdullah@dev</span>:<span class="t-acc">~</span>$ ', '<span class="t-cmd">dotnet run</span>'],
+  ['', '<span class="t-out">info: Now listening on: </span><span class="t-acc">abdullah-alshamlani.github.io</span>'],
+];
+const term = document.getElementById("term");
+let li = 0;
+function typeLine(){
+  if (li >= lines.length){ term.insertAdjacentHTML("beforeend", '<div><span class="t-prompt">abdullah@dev</span>:<span class="t-acc">~</span>$ <span class="cursor"></span></div>'); return; }
+  const [p, html] = lines[li++];
+  const row = document.createElement("div"); row.innerHTML = p; term.appendChild(row);
+  const tmp = document.createElement("span"); tmp.innerHTML = html; const text = tmp.textContent;
+  if (!p) { row.innerHTML += html; setTimeout(typeLine, 180); return; }
+  const span = document.createElement("span"); span.className = "t-cmd"; row.appendChild(span);
+  let i = 0; const t = setInterval(() => { span.textContent = text.slice(0, ++i); if (i >= text.length){ clearInterval(t); setTimeout(typeLine, 350); } }, 55);
+}
+setTimeout(typeLine, 500);
+
+/* reveal on scroll */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
