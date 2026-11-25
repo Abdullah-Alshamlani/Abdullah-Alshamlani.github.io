@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdullah Al-Shamlani | .NET Software Developer</title>
-<meta name="description" content="Abdullah Al-Shamlani — Backend / .NET Software Developer based in Riyadh, Saudi Arabia. ASP.NET Core, Web API, Blazor, Clean Architecture.">
-<meta property="og:title" content="Abdullah Al-Shamlani | .NET Software Developer">
-<meta property="og:description" content="Backend / .NET Software Developer — ASP.NET Core, Web API, Blazor, Clean Architecture.">
+<title>Abdullah Al-Shamlani | ASP.NET Core Web API Developer</title>
+<meta name="description" content="Abdullah Al-Shamlani — ASP.NET Core Web API developer based in Riyadh, Saudi Arabia. RESTful APIs, Clean Architecture, EF Core, SQL Server.">
+<meta property="og:title" content="Abdullah Al-Shamlani | ASP.NET Core Web API Developer">
+<meta property="og:description" content="ASP.NET Core Web API developer — RESTful APIs, Clean Architecture, EF Core, SQL Server.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0a0e14">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230a0e14'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-size='30' font-weight='700' fill='%2322d3ee'>&lt;A/&gt;</text></svg>">
@@ -86,6 +86,8 @@
   .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
   .stat b{display:block;direction:ltr;unicode-bidi:isolate;font-family:var(--mono);font-size:1.9rem;color:var(--accent);line-height:1.2}
   .stat span{color:var(--muted);font-size:.9rem}
+  .muted-p{color:var(--muted);font-size:.94rem}
+  .sec-note{color:var(--muted);margin-top:8px}
 
   .skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:border-color .25s,transform .25s}
@@ -131,6 +133,18 @@
   .contact{text-align:center}
   .contact .lead{margin:14px auto 34px}
   .contact-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+  .cform{max-width:640px;margin:0 auto 28px;text-align:start;display:grid;gap:16px}
+  .cform:hover{transform:none}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .cform label{display:grid;gap:6px;font-size:.88rem;color:var(--muted)}
+  .cform input,.cform textarea{font:inherit;color:var(--text);background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:11px 14px;outline:none;transition:border-color .2s;resize:vertical}
+  .cform input:focus,.cform textarea:focus{border-color:var(--accent)}
+  .cform .btn{justify-self:start;border:none;cursor:pointer}
+  .cform .btn:disabled{opacity:.6;cursor:wait}
+  .hp{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);opacity:0;pointer-events:none}
+  .fstatus{font-size:.9rem;min-height:1.4em}
+  .fstatus.ok{color:var(--green)} .fstatus.err{color:#f87171}
+  @media (max-width:600px){.row2{grid-template-columns:1fr}}
 
   footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted);font-size:.85rem}
   footer .mono{color:var(--accent)}
@@ -178,7 +192,7 @@
       <div class="cta">
         <a href="#projects" class="btn btn-primary"><span data-i18n="hero.cta1"></span></a>
         <a href="https://github.com/Abdullah-Alshamlani" target="_blank" rel="noopener" class="btn btn-ghost">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.590.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
           GitHub
         </a>
       </div>
@@ -199,36 +213,43 @@
         <div class="stat"><b>2+</b><span data-i18n="about.s1"></span></div>
         <div class="stat"><b>4</b><span data-i18n="about.s2"></span></div>
         <div class="stat"><b>SDLC</b><span data-i18n="about.s3"></span></div>
-        <div class="stat"><b>.NET</b><span data-i18n="about.s4"></span></div>
+        <div class="stat"><b>Web API</b><span data-i18n="about.s4"></span></div>
       </div>
     </div>
   </div>
 </section>
 
+<section id="focus" class="reveal">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-tag">// 02. focus</div><h2 data-i18n="focus.title"></h2></div>
+    <div class="skills" id="focusGrid"></div>
+  </div>
+</section>
+
 <section id="skills" class="reveal">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-tag">// 02. skills</div><h2 data-i18n="skills.title"></h2></div>
+    <div class="sec-head"><div class="sec-tag">// 03. skills</div><h2 data-i18n="skills.title"></h2></div>
     <div class="skills" id="skillsGrid"></div>
   </div>
 </section>
 
 <section id="experience" class="reveal">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-tag">// 03. experience</div><h2 data-i18n="exp.title"></h2></div>
+    <div class="sec-head"><div class="sec-tag">// 04. experience</div><h2 data-i18n="exp.title"></h2></div>
     <div class="timeline" id="timeline"></div>
   </div>
 </section>
 
 <section id="projects" class="reveal">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-tag">// 04. projects</div><h2 data-i18n="proj.title"></h2></div>
+    <div class="sec-head"><div class="sec-tag">// 05. projects</div><h2 data-i18n="proj.title"></h2><p class="sec-note" data-i18n="proj.note"></p></div>
     <div class="projects" id="projGrid"></div>
   </div>
 </section>
 
 <section id="education" class="reveal">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-tag">// 05. education</div><h2 data-i18n="edu.title"></h2></div>
+    <div class="sec-head"><div class="sec-tag">// 06. education</div><h2 data-i18n="edu.title"></h2></div>
     <div class="two">
       <div class="card">
         <h3><span class="ic">{ }</span><span data-i18n="edu.degree"></span></h3>
@@ -245,15 +266,25 @@
 
 <section id="contact" class="reveal contact">
   <div class="wrap">
-    <div class="sec-tag">// 06. contact</div>
+    <div class="sec-tag">// 07. contact</div>
     <h2 data-i18n="contact.title"></h2>
     <p class="lead" data-i18n="contact.lead"></p>
+    <form class="cform card" id="contactForm" novalidate>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+      <div class="row2">
+        <label><span data-i18n="form.name"></span><input name="name" id="fName" required maxlength="100"></label>
+        <label><span data-i18n="form.email"></span><input name="email" id="fEmail" type="email" required maxlength="150" dir="ltr"></label>
+      </div>
+      <label><span data-i18n="form.subject"></span><input name="subject" id="fSubject" required maxlength="150"></label>
+      <label><span data-i18n="form.message"></span><textarea name="message" id="fMsg" rows="5" required maxlength="3000"></textarea></label>
+      <button type="submit" class="btn btn-primary" id="fBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        <span data-i18n="form.send"></span>
+      </button>
+      <div class="fstatus" id="fStatus" role="status"></div>
+    </form>
     <div class="contact-links">
-      <a class="btn btn-primary" href="mailto:abdullah.mufarreh.23@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
-        <span data-i18n="contact.email"></span>
-      </a>
-      <a class="btn btn-ghost" href="https://www.linkedin.com/in/abdullahalshamlani-7388b1259" target="_blank" rel="noopener">
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/abdullah-alshamlani-7388b1259" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
         LinkedIn
       </a>
@@ -274,55 +305,68 @@ const I18N = {
   en: {
     "nav.about":"About","nav.skills":"Skills","nav.experience":"Experience","nav.projects":"Projects","nav.contact":"Contact",
     "hero.badge":"Open to new opportunities","hero.hi":"Hi, I'm","hero.name":"Abdullah Al-Shamlani",
-    "hero.role":"> Backend / .NET Software Developer",
-    "hero.lead":"I build RESTful APIs and enterprise web applications with C#, ASP.NET Core and Blazor — clean, scalable, and production-ready.",
+    "hero.role":"> ASP.NET Core Web API Developer",
+    "hero.lead":"I design and build RESTful APIs with C# and ASP.NET Core — following Clean Architecture, backed by EF Core and SQL Server, and built to be secure, testable and production-ready.",
     "hero.cta1":"View my work",
     "about.title":"About me",
-    "about.p1":"Software Developer with over 2 years of professional experience developing and maintaining RESTful APIs and enterprise web applications using C#, ASP.NET Core and Python/Django.",
-    "about.p2":"I deliver production-ready solutions across the full Software Development Life Cycle — analysis, design, development, testing, CI/CD deployment and monitoring — with a focus on Clean Architecture, solid API design and engineering best practices.",
-    "about.s1":"Years of experience","about.s2":"Enterprise apps delivered","about.s3":"End-to-end delivery","about.s4":"Core stack",
+    "about.p1":"Software Developer with over 2 years of professional experience building RESTful APIs and backend systems. Today my focus is the .NET ecosystem — designing and shipping ASP.NET Core Web APIs in C# for enterprise applications.",
+    "about.p2":"I work across the full Software Development Life Cycle — analysis, design, development, testing, CI/CD deployment and monitoring — with a strong focus on Clean Architecture, solid API design and engineering best practices. Earlier, I delivered several production platforms with Python/Django.",
+    "about.s1":"Years of experience","about.s2":"Enterprise apps delivered","about.s3":"End-to-end delivery","about.s4":"Current focus",
+    "focus.title":"What I build with ASP.NET Core",
     "skills.title":"Tech stack",
     "exp.title":"Experience",
-    "proj.title":"Featured projects",
+    "proj.title":"Delivered projects","proj.note":"Production platforms I delivered earlier in my career — new ASP.NET Core projects are on my GitHub.",
     "edu.title":"Education & certifications","edu.degree":"Education","edu.certs":"Certifications",
     "edu.d1":"Bachelor's in Software Engineering","edu.d1s":"University of Hail · 2018 – 2023",
     "edu.c1":"ASP.NET Core Advanced","edu.c1s":"Tuwaiq Academy · 2026",
     "edu.c2":"Python & Django Web Development","edu.c2s":"Tuwaiq Academy · 2024",
-    "contact.title":"Let's work together","contact.lead":"Have a project, a role, or just want to talk .NET? My inbox is always open.",
-    "contact.email":"Send an email",
+    "contact.title":"Let's work together","contact.lead":"Have a project, a role, or just want to talk .NET? Send me a message and I'll get back to you.",
+    "form.name":"Name","form.email":"Your email","form.subject":"Subject","form.message":"Message","form.send":"Send message","form.sending":"Sending...","form.ok":"Thanks! Your message has been sent — I'll reply soon.","form.err":"Something went wrong. Please try again, or reach me on LinkedIn.","form.invalid":"Please fill in all fields with a valid email.",
     "footer":"Designed & built by Abdullah Al-Shamlani"
   },
   ar: {
     "nav.about":"نبذة","nav.skills":"المهارات","nav.experience":"الخبرات","nav.projects":"المشاريع","nav.contact":"تواصل",
     "hero.badge":"متاح لفرص عمل جديدة","hero.hi":"مرحباً، أنا","hero.name":"عبدالله الشملاني",
-    "hero.role":"مطوّر برمجيات Backend / .NET",
-    "hero.lead":"أبني واجهات RESTful APIs وتطبيقات ويب مؤسسية باستخدام C# وASP.NET Core وBlazor — بكود نظيف وقابل للتوسّع وجاهز للإنتاج.",
+    "hero.role":"مطوّر ASP.NET Core Web API",
+    "hero.lead":"أصمّم وأبني واجهات RESTful APIs باستخدام C# وASP.NET Core — وفق Clean Architecture، مع EF Core وSQL Server، بكود آمن وقابل للاختبار وجاهز للإنتاج.",
     "hero.cta1":"شاهد أعمالي",
     "about.title":"نبذة عني",
-    "about.p1":"مطوّر برمجيات بخبرة عملية تتجاوز سنتين في تطوير وصيانة واجهات RESTful APIs وتطبيقات الويب المؤسسية باستخدام C# وASP.NET Core وPython/Django.",
-    "about.p2":"أقدّم حلولاً جاهزة للإنتاج عبر دورة حياة تطوير البرمجيات كاملة — من التحليل والتصميم والتطوير والاختبار، إلى النشر عبر CI/CD والمراقبة المستمرة — مع تركيز على Clean Architecture وتصميم APIs متين وأفضل ممارسات هندسة البرمجيات.",
-    "about.s1":"سنوات خبرة","about.s2":"تطبيقات مؤسسية منجزة","about.s3":"تسليم متكامل","about.s4":"التقنية الأساسية",
+    "about.p1":"مطوّر برمجيات بخبرة عملية تتجاوز سنتين في بناء واجهات RESTful APIs والأنظمة الخلفية. تركيزي اليوم على منظومة .NET — تصميم وتطوير واجهات ASP.NET Core Web API بلغة C# للتطبيقات المؤسسية.",
+    "about.p2":"أعمل عبر دورة حياة تطوير البرمجيات كاملة — من التحليل والتصميم والتطوير والاختبار، إلى النشر عبر CI/CD والمراقبة المستمرة — مع تركيز على Clean Architecture وتصميم APIs متين وأفضل ممارسات هندسة البرمجيات. وسبق أن سلّمت عدة منصات إنتاجية باستخدام Python/Django.",
+    "about.s1":"سنوات خبرة","about.s2":"تطبيقات مؤسسية منجزة","about.s3":"تسليم متكامل","about.s4":"تركيزي الحالي",
+    "focus.title":"ما أبنيه بـ ASP.NET Core",
     "skills.title":"التقنيات والمهارات",
     "exp.title":"الخبرات العملية",
-    "proj.title":"أبرز المشاريع",
+    "proj.title":"مشاريع منجزة","proj.note":"منصات إنتاجية سلّمتها في مراحل سابقة من مسيرتي — ومشاريع ASP.NET Core الجديدة على حسابي في GitHub.",
     "edu.title":"التعليم والشهادات","edu.degree":"التعليم","edu.certs":"الشهادات",
     "edu.d1":"بكالوريوس هندسة البرمجيات","edu.d1s":"جامعة حائل · 2018 – 2023",
     "edu.c1":"ASP.NET Core المتقدم","edu.c1s":"أكاديمية طويق · 2026",
     "edu.c2":"تطوير الويب بـ Python وDjango","edu.c2s":"أكاديمية طويق · 2024",
-    "contact.title":"لنعمل معاً","contact.lead":"عندك مشروع أو فرصة وظيفية، أو تبي تتكلم عن .NET؟ بريدي مفتوح دائماً.",
-    "contact.email":"أرسل بريداً",
+    "contact.title":"لنعمل معاً","contact.lead":"عندك مشروع أو فرصة وظيفية، أو تبي تتكلم عن .NET؟ أرسل لي رسالة وبرد عليك.",
+    "form.name":"الاسم","form.email":"بريدك الإلكتروني","form.subject":"الموضوع","form.message":"الرسالة","form.send":"إرسال الرسالة","form.sending":"جارٍ الإرسال...","form.ok":"شكراً! تم إرسال رسالتك وسأرد عليك قريباً.","form.err":"حدث خطأ، حاول مرة أخرى أو تواصل معي عبر LinkedIn.","form.invalid":"فضلاً عبّئ جميع الحقول ببريد إلكتروني صحيح.",
     "footer":"صُمّم وطُوّر بواسطة عبدالله الشملاني"
   }
 };
 
 const SKILLS = [
-  {ic:"</>", en:"Languages", ar:"لغات البرمجة", items:["C#","Python","JavaScript","SQL"]},
-  {ic:"{api}", en:"Backend", ar:"الواجهات الخلفية", items:["ASP.NET Core","Web API","REST APIs","Entity Framework Core","LINQ","Razor Pages","Django"]},
+  {ic:"{api}", en:".NET Backend", ar:"الواجهات الخلفية بـ .NET", items:["C#","ASP.NET Core","Web API","REST APIs","Entity Framework Core","LINQ","Razor Pages"]},
+  {ic:"#arch", en:"Architecture & Patterns", ar:"المعمارية والأنماط", items:["Clean Architecture","Repository Pattern","Dependency Injection","MVC"]},
   {ic:"<ui>", en:"Frontend", ar:"الواجهات الأمامية", items:["Blazor","HTML5","CSS3","Bootstrap"]},
   {ic:"[db]", en:"Databases", ar:"قواعد البيانات", items:["SQL Server","PostgreSQL"]},
-  {ic:"#arch", en:"Architecture & Patterns", ar:"المعمارية والأنماط", items:["Clean Architecture","Repository Pattern","Dependency Injection","MVC"]},
   {ic:"$ops", en:"DevOps & Cloud", ar:"DevOps والسحابة", items:["CI/CD","Ubuntu","Nginx","Gunicorn","DigitalOcean","SSL/TLS"]},
-  {ic:"git", en:"Practices & Tools", ar:"الممارسات والأدوات", items:["Git","GitHub","Agile/Scrum","Code Reviews","Unit Testing","Monitoring","SDLC"]}
+  {ic:"git", en:"Practices & Tools", ar:"الممارسات والأدوات", items:["Git","GitHub","Agile/Scrum","Code Reviews","Unit Testing","Monitoring","SDLC"]},
+  {ic:"+py", en:"Also experienced with", ar:"خبرة إضافية", items:["Python","Django","JavaScript"]}
+];
+
+const FOCUS = [
+  {ic:"GET /api", en:{t:"RESTful API design", d:"Resource-oriented endpoints, consistent responses and status codes, validation and versioning-ready contracts."},
+   ar:{t:"تصميم RESTful APIs", d:"نقاط وصول مبنية على الموارد، استجابات ورموز حالة موحّدة، تحقق من المدخلات، وعقود جاهزة للإصدارات."}},
+  {ic:"layers", en:{t:"Clean Architecture", d:"Separated Domain, Application, Infrastructure and API layers with Dependency Injection — easy to test, change and scale."},
+   ar:{t:"Clean Architecture", d:"فصل طبقات Domain وApplication وInfrastructure وAPI مع Dependency Injection — كود سهل الاختبار والتعديل والتوسّع."}},
+  {ic:"EF Core", en:{t:"Data access", d:"Entity Framework Core, LINQ and SQL Server — clean data models, migrations and efficient queries."},
+   ar:{t:"الوصول للبيانات", d:"Entity Framework Core وLINQ وSQL Server — نماذج بيانات نظيفة، Migrations، واستعلامات فعّالة."}},
+  {ic:"CI/CD", en:{t:"Quality & delivery", d:"Unit testing, code reviews, monitoring and CI/CD pipelines to ship reliable APIs to production."},
+   ar:{t:"الجودة والتسليم", d:"اختبارات الوحدات، مراجعة الكود، المراقبة، وخطوط CI/CD لتسليم APIs موثوقة إلى بيئة الإنتاج."}}
 ];
 
 const JOBS = [
@@ -365,7 +409,7 @@ const JOBS = [
 ];
 
 const PROJECTS = [
-  {url:"https://fhc.com.sa", host:"fhc.com.sa", tags:["ASP.NET Core","Web API","SQL Server"],
+  {url:"https://fhc.com.sa", host:"fhc.com.sa", tags:["Python","Django","REST APIs","PostgreSQL"],
    en:{t:"Point Platform", d:"Delivered 4 enterprise web applications, designing the backend architecture and integrating cross-system workflows to support business operations at scale."},
    ar:{t:"منصة Point", d:"تسليم 4 تطبيقات ويب مؤسسية، مع تصميم المعمارية الخلفية وربط سير العمل بين الأنظمة لدعم عمليات الأعمال على نطاق واسع."}},
   {url:"https://fmi.sa", host:"fmi.sa", tags:["Python","Django","PostgreSQL","Nginx"],
@@ -383,12 +427,14 @@ function render(lang){
   const T = I18N[lang];
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-  document.title = lang === "ar" ? "عبدالله الشملاني | مطوّر برمجيات .NET" : "Abdullah Al-Shamlani | .NET Software Developer";
+  document.title = lang === "ar" ? "عبدالله الشملاني | مطوّر ASP.NET Core Web API" : "Abdullah Al-Shamlani | ASP.NET Core Web API Developer";
   document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = T[el.dataset.i18n] ?? ""; });
   document.getElementById("langLabel").innerHTML = lang === "ar" ? "<b>EN</b> English" : "<b>ع</b> العربية";
 
   document.getElementById("skillsGrid").innerHTML = SKILLS.map(s =>
     `<div class="card"><h3><span class="ic">${esc(s.ic)}</span>${s[lang]}</h3><div class="chips">${s.items.map(i=>`<span class="chip">${i}</span>`).join("")}</div></div>`).join("");
+
+  document.getElementById("focusGrid").innerHTML = FOCUS.map(f => `<div class="card"><h3><span class="ic">${esc(f.ic)}</span>${f[lang].t}</h3><p class="muted-p">${f[lang].d}</p></div>`).join("");
 
   document.getElementById("timeline").innerHTML = JOBS.map(j => { const d=j[lang]; return `
     <div class="job card"><div class="job-head"><div><h3>${d.t}</h3><div class="co">${d.c}</div></div><div class="date">${lang==="ar"?j.dateAr:j.date}</div></div>
@@ -415,16 +461,37 @@ document.getElementById("menuBtn").addEventListener("click", () => document.getE
 document.querySelectorAll("#links a").forEach(a => a.addEventListener("click", () => document.getElementById("links").classList.remove("open")));
 document.getElementById("year").textContent = new Date().getFullYear();
 
+/* contact form (FormSubmit) */
+const form = document.getElementById("contactForm"), fStatus = document.getElementById("fStatus"), fBtn = document.getElementById("fBtn");
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  const T = I18N[lang], v = id => document.getElementById(id).value.trim();
+  const name=v("fName"), email=v("fEmail"), subject=v("fSubject"), message=v("fMsg");
+  if (!name || !subject || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { fStatus.className="fstatus err"; fStatus.textContent=T["form.invalid"]; return; }
+  if (form._honey.value) return;
+  fBtn.disabled = true; fStatus.className="fstatus"; fStatus.textContent=T["form.sending"];
+  try {
+    const res = await fetch("https://formsubmit.co/ajax/abdullah.mufarreh.23@gmail.com", {
+      method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body: JSON.stringify({ name, email, _replyto: email, _subject: "[Portfolio] " + subject, subject, message, _template:"table", _captcha:"false" })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || String(data.success) === "false") throw new Error();
+    fStatus.className="fstatus ok"; fStatus.textContent=T["form.ok"]; form.reset();
+  } catch { fStatus.className="fstatus err"; fStatus.textContent=T["form.err"]; }
+  finally { fBtn.disabled = false; }
+});
+
 /* terminal typing */
 const lines = [
   ['<span class="t-prompt">abdullah@dev</span>:<span class="t-acc">~</span>$ ', '<span class="t-cmd">whoami</span>'],
-  ['', '<span class="t-out">Backend / .NET Software Developer</span>'],
+  ['', '<span class="t-out">ASP.NET Core Web API Developer</span>'],
   ['<span class="t-prompt">abdullah@dev</span>:<span class="t-acc">~</span>$ ', '<span class="t-cmd">cat stack.json</span>'],
-  ['', '{ <span class="t-key">"backend"</span>: <span class="t-str">"ASP.NET Core"</span>,'],
-  ['', '  <span class="t-key">"frontend"</span>: <span class="t-str">"Blazor"</span>,'],
+  ['', '{ <span class="t-key">"focus"</span>: <span class="t-str">"ASP.NET Core Web API"</span>,'],
+  ['', '  <span class="t-key">"orm"</span>: <span class="t-str">"EF Core"</span>,'],
   ['', '  <span class="t-key">"db"</span>: <span class="t-str">"SQL Server"</span>,'],
   ['', '  <span class="t-key">"arch"</span>: <span class="t-str">"Clean Architecture"</span> }'],
-  ['<span class="t-prompt">abdullah@dev</span>:<span class="t-acc">~</span>$ ', '<span class="t-cmd">dotnet run</span>'],
+  ['<span class="t-prompt">abdullah@dev</span>:<span class="t-acc">~</span>$ ', '<span class="t-cmd">dotnet run --project Api</span>'],
   ['', '<span class="t-out">info: Now listening on: </span><span class="t-acc">abdullah-alshamlani.github.io</span>'],
 ];
 const term = document.getElementById("term");
