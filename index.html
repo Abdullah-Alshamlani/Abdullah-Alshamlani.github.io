@@ -370,13 +370,13 @@ const FOCUS = [
 ];
 
 const JOBS = [
-  {date:"Oct 2025 – Present", dateAr:"أكتوبر 2025 – الآن",
+  {date:"Oct 2025 – Present", dateAr:"أكتوبر 2025 – الآن", url:"https://wsc.com.sa/ar",
    en:{t:"Software Developer", c:"Watania Solutions Co. · Riyadh", b:[
      "Engineer backend systems and enterprise web applications in C# and ASP.NET Core, translating business requirements into maintainable, production-ready software.",
      "Design and implement RESTful APIs and backend services powering integrated business applications, collaborating with infrastructure and database teams on code reviews and testing.",
      "Investigate and resolve performance issues through monitoring and root-cause analysis, reducing recurring incidents.",
      "Support CI/CD deployments and handle support requests within SLA targets."]},
-   ar:{t:"مطوّر برمجيات", c:"شركة الوطنية للحلول · الرياض", b:[
+   ar:{t:"مطوّر برمجيات", c:"حلول وطنية للاتصالات وتقنية المعلومات · الرياض", b:[
      "تطوير الأنظمة الخلفية وتطبيقات الويب المؤسسية بـ C# وASP.NET Core، وتحويل متطلبات العمل إلى برمجيات قابلة للصيانة وجاهزة للإنتاج.",
      "تصميم وتنفيذ واجهات RESTful APIs وخدمات خلفية تشغّل تطبيقات أعمال متكاملة، بالتعاون مع فرق البنية التحتية وقواعد البيانات في مراجعة الكود والاختبار.",
      "تحليل مشاكل الأداء وحلّها عبر المراقبة وتحليل الأسباب الجذرية، مما قلّل تكرار الأعطال.",
@@ -437,7 +437,7 @@ function render(lang){
   document.getElementById("focusGrid").innerHTML = FOCUS.map(f => `<div class="card"><h3><span class="ic">${esc(f.ic)}</span>${f[lang].t}</h3><p class="muted-p">${f[lang].d}</p></div>`).join("");
 
   document.getElementById("timeline").innerHTML = JOBS.map(j => { const d=j[lang]; return `
-    <div class="job card"><div class="job-head"><div><h3>${d.t}</h3><div class="co">${d.c}</div></div><div class="date">${lang==="ar"?j.dateAr:j.date}</div></div>
+    <div class="job card"><div class="job-head"><div><h3>${d.t}</h3><div class="co">${j.url?`<a href="${j.url}" target="_blank" rel="noopener">${d.c} ↗</a>`:d.c}</div></div><div class="date">${lang==="ar"?j.dateAr:j.date}</div></div>
     <ul>${d.b.map(b=>`<li>${b}</li>`).join("")}</ul></div>`; }).join("");
 
   document.getElementById("projGrid").innerHTML = PROJECTS.map(p => { const d=p[lang]; return `
